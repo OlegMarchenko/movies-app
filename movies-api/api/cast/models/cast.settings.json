@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "casts",
+  "info": {
+    "name": "Cast"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "movies": {
+      "collection": "movie",
+      "via": "casts",
+      "dominant": true
+    },
+    "serials": {
+      "via": "casts",
+      "collection": "serial"
+    }
+  }
+}

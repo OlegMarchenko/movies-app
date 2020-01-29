@@ -1,0 +1,41 @@
+{
+  "connection": "default",
+  "collectionName": "movies",
+  "info": {
+    "name": "movie"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "categories": {
+      "collection": "category",
+      "via": "movies"
+    },
+    "movie_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "free-hours.free-watch-hours",
+      "required": true
+    },
+    "casts": {
+      "via": "movies",
+      "collection": "cast"
+    }
+  }
+}

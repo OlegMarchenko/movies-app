@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "categories",
+  "info": {
+    "name": "category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "movies": {
+      "via": "categories",
+      "collection": "movie",
+      "dominant": true
+    },
+    "serials": {
+      "via": "categories",
+      "collection": "serial"
+    }
+  }
+}

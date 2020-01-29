@@ -1,0 +1,137 @@
+############################
+# OS X
+############################
+
+movies-api/.DS_Store
+movies-api/.AppleDouble
+movies-api/.LSOverride
+movies-api/Icon
+movies-api/.Spotlight-V100
+movies-api/.Trashes
+movies-api/._*
+
+
+############################
+# Linux
+############################
+
+*~
+
+
+############################
+# Windows
+############################
+
+movies-api/Thumbs.db
+movies-api/ehthumbs.db
+movies-api/Desktop.ini
+movies-api/$RECYCLE.BIN/
+movies-api/*.cab
+movies-api/*.msi
+movies-api/*.msm
+movies-api/*.msp
+
+
+############################
+# Packages
+############################
+
+movies-api/*.7z
+movies-api/*.csv
+movies-api/*.dat
+movies-api/*.dmg
+movies-api/*.gz
+movies-api/*.iso
+movies-api/*.jar
+movies-api/*.rar
+movies-api/*.tar
+movies-api/*.zip
+movies-api/*.com
+movies-api/*.class
+movies-api/*.dll
+movies-api/*.exe
+movies-api/*.o
+movies-api/*.seed
+movies-api/*.so
+movies-api/*.swo
+movies-api/*.swp
+movies-api/*.swn
+movies-api/*.swm
+movies-api/*.out
+movies-api/*.pid
+
+
+############################
+# Logs and databases
+############################
+
+movies-api/.tmp
+movies-api/*.log
+movies-api/*.sql
+movies-api/*.sqlite
+movies-api/*.sqlite3
+
+
+############################
+# Misc.
+############################
+
+movies-api/*#
+movies-api/ssl
+movies-api/.idea
+movies-api/nbproject
+movies-api/public/uploads/*
+movies-api/!public/uploads/.gitkeep
+
+############################
+# Node.js
+############################
+
+movies-api/lib-cov
+movies-api/lcov.info
+movies-api/pids
+movies-api/logs
+movies-api/results
+movies-api/node_modules
+movies-api/.node_history
+
+
+############################
+# Tests
+############################
+
+movies-api/testApp
+movies-api/coverage
+
+############################
+# Strapi
+############################
+
+movies-api/exports
+movies-api/.cache
+movies-api/build
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+movies-front/node_modules
+movies-front/.pnp
+movies-front.pnp.js
+
+# testing
+movies-front/coverage
+
+# production
+movies-front/build
+
+# misc
+movies-front/.DS_Store
+movies-front/.env.local
+movies-front/.env.development.local
+movies-front/.env.test.local
+movies-front/.env.production.local
+
+movies-front/npm-debug.log*
+movies-front/yarn-debug.log*
+movies-front/yarn-error.log*
+

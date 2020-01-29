@@ -1,0 +1,21 @@
+{
+  "info": {
+    "name": "free_watch_hours",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "time_interval": {
+      "type": "string",
+      "required": true
+    },
+    "start_free_hours": {
+      "type": "string"
+    },
+    "end_free_hours": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_free_hours_free_watch_hours"
+}

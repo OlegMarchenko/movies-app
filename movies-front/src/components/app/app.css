@@ -1,0 +1,130 @@
+html {
+  font: 22px/1.3 "Helvetica", sans-serif;
+}
+
+body {
+  background: #222;
+  color: #fff;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font: 1.5rem/1.2 "Helvetica", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: yellowgreen;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.movies-app {
+  max-width: 1200px;
+  padding: 30px 30px 200px;
+  margin: 0 auto;
+}
+
+.item-details {
+  display: flex;
+  position: relative;
+  height: 342px;
+  border: 1px solid #3c3c3c;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background: #2a2a2a;
+}
+.item-details-img {
+  display: block;
+  height: 300px;
+  width: 225px;
+  object-fit: cover;
+  object-position: top;
+  margin-right: 30px;
+  box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+}
+.item-details-desc > li {
+  display: flex;
+  margin-bottom: 10px;
+}
+.item-details-desc > li > span {
+  margin-right: 10px;
+}
+.item-details-desc > li > p > span {
+  margin-right: 5px;
+}
+.item-details-desc > li > p > span::after {
+  display: inline-block;
+  content: ",";
+}
+.item-details-desc > li > p > span:last-child::after {
+  content: none;
+}
+
+.item-holder {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.item-holder .item-details {
+  width: calc(66.6% - 15px);
+  height: auto;
+  margin-bottom: 0;
+}
+.item-holder .item-details-img {
+  width: 160px;
+  height: 204px;
+}
+.item-holder .item-details-desc {
+  font-size: 0.9rem;
+}
+.item-holder:last-child {
+  margin-bottom: 0;
+}
+.item-list {
+  width: calc(33.3% - 15px);
+  border: 1px solid #3c3c3c;
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+.item-list > li {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-bottom: 1px solid #3c3c3c;
+  transition: 0.2s color;
+}
+.item-list > li:last-child {
+  border-bottom: none;
+}
+.item-list > li:hover {
+  color: #20ecbe;
+}
+
+/*# sourceMappingURL=app.css.map */
