@@ -36,7 +36,7 @@ export default class MoviesPage extends Component {
 
         const itemDetails = (
             <ItemDetails itemId={selectedItem}
-            getData={getMovie} />
+                         getData={getMovie}/>
         );
 
         return (
