@@ -1,0 +1,95 @@
+{
+  "_from": "strapi-plugin-content-manager@3.0.0-beta.18.5",
+  "_id": "strapi-plugin-content-manager@3.0.0-beta.18.5",
+  "_inBundle": false,
+  "_integrity": "sha512-wGuDVlPRMZkns5BiVRrY8NBIOOhoV4TZzkjfEAUQMUaXl2IAGgbegiEFhCQ4jxESwTry6gPd52nLBW/v1LBUnw==",
+  "_location": "/strapi-plugin-content-manager",
+  "_phantomChildren": {
+    "@babel/runtime": "7.8.3",
+    "fn-name": "2.0.1",
+    "lodash": "4.17.15",
+    "property-expr": "1.5.1",
+    "synchronous-promise": "2.0.10",
+    "toposort": "2.0.2"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "strapi-plugin-content-manager@3.0.0-beta.18.5",
+    "name": "strapi-plugin-content-manager",
+    "escapedName": "strapi-plugin-content-manager",
+    "rawSpec": "3.0.0-beta.18.5",
+    "saveSpec": null,
+    "fetchSpec": "3.0.0-beta.18.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-beta.18.5.tgz",
+  "_shasum": "73234215c3618fd3749f571dcac6d4add2fdfc6d",
+  "_spec": "strapi-plugin-content-manager@3.0.0-beta.18.5",
+  "_where": "/home/dev/headlesscms/movies-app/movies-api",
+  "author": {
+    "name": "Strapi team",
+    "email": "hi@strapi.io",
+    "url": "http://strapi.io"
+  },
+  "bugs": {
+    "url": "https://github.com/strapi/strapi/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "codemirror": "^5.46.0",
+    "draft-js": "^0.10.5",
+    "immutable": "^3.8.2",
+    "invariant": "^2.2.1",
+    "lodash": "^4.17.11",
+    "pluralize": "^7.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-intl": "^2.8.0",
+    "react-redux": "^7.0.2",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-select": "^3.0.4",
+    "react-transition-group": "^2.5.0",
+    "reactstrap": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
+    "reselect": "^3.0.1",
+    "showdown": "^1.9.0",
+    "strapi-helper-plugin": "3.0.0-beta.18.5",
+    "strapi-utils": "3.0.0-beta.18.5",
+    "styled-components": "^4.2.0",
+    "yup": "^0.27.0"
+  },
+  "deprecated": false,
+  "description": "A powerful UI to easily manage your data.",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "gitHead": "2ee13c0a1260c09c4c5f03a80827ea2db5b4981a",
+  "homepage": "https://github.com/strapi/strapi#readme",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Strapi team",
+      "email": "hi@strapi.io",
+      "url": "http://strapi.io"
+    }
+  ],
+  "name": "strapi-plugin-content-manager",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strapi/strapi.git"
+  },
+  "strapi": {
+    "name": "Content Manager",
+    "icon": "plug",
+    "description": "content-manager.plugin.description",
+    "required": true
+  },
+  "version": "3.0.0-beta.18.5"
+}
