@@ -5,7 +5,7 @@ import './item-details.css';
 const Record = ({item, field, label}) => {
     return (
         <li>
-            <span>{label}</span>
+            <span>{label}: </span>
             <p>{item[field]}</p>
         </li>
     )
@@ -57,7 +57,7 @@ export default class ItemDetails extends Component {
                 <img src={image} alt={name} title={name} className="item-details-img"/>
                 <ul className="item-details-desc">
                     {
-                        Record.Children.map(this.props.children, (child) => {
+                        React.Children.map(this.props.children, (child) => {
                             return  React.cloneElement(child, {item});
                         })
                     }

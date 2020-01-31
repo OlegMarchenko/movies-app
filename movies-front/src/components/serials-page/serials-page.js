@@ -4,7 +4,7 @@ import StrapiService from "../../services/strapi-service";
 import ErrorBoundry from "../error-boundry";
 import Row from "../row";
 import ItemList from "../item-list";
-import ItemDetails from "../item-details";
+import ItemDetails, {Record} from "../item-details";
 
 import './serials-page.css';
 
@@ -36,7 +36,14 @@ export default class SerialsPage extends Component {
 
         const itemDetails = (
             <ItemDetails itemId={selectedItem}
-                         getData={getSerial} />
+                         getData={getSerial}>
+                <Record label ="Name" field="name" />
+                <Record label ="Seasons" field="seasons" />
+                <Record label ="Categories" field="categories" />
+                <Record label ="Casts" field="casts" />
+                <Record label ="Free Time" field="timeInterval" />
+                <Record label ="Tagline" field="tagline" />
+            </ItemDetails>
         );
 
         return (

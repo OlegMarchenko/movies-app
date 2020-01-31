@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 
 export default class StrapiService {
 
@@ -71,7 +71,7 @@ export default class StrapiService {
             description: serial.description,
             seasons: serial.seasons,
             tagline: serial.tagline,
-            categories: this.preparationData(serial.casts),
+            categories: this.preparationData(serial.categories),
             casts: this.preparationData(serial.casts),
             timeInterval: this.preparationHours(serial.movie_hours)
         }

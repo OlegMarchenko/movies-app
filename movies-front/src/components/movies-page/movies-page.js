@@ -38,6 +38,9 @@ export default class MoviesPage extends Component {
             <ItemDetails itemId={selectedItem}
                          getData={getMovie}>
                 <Record label ="Name" field="name" />
+                <Record label ="Categories" field="categories" />
+                <Record label ="Casts" field="casts" />
+                <Record label ="Free Time" field="timeInterval" />
             </ItemDetails>
         );
 

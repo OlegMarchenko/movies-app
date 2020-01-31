@@ -63,18 +63,23 @@ ul {
     width: 225px;
     object-fit: cover;
     object-position: top;
-    margin-right: 30px;
     box-shadow: 8px 8px 4px 0 rgba(0,0,0,0.75);
     border-radius: 10px;
   }
   &-desc {
+    width: calc(100% - 225px);
+    padding-left: 30px;
     > li {
       display: flex;
       margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid lighten(#222, 10%);
       > span {
         margin-right: 10px;
+        width: 120px;
       }
       > p {
+        width: calc(100% - 120px);
         > span {
           margin-right: 5px;
           &::after {
@@ -87,6 +92,11 @@ ul {
             }
           }
         }
+      }
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -107,8 +117,10 @@ ul {
       &-img {
         width: 160px;
         height: 204px;
+        margin-right: 0;
       }
       &-desc {
+        width: calc(100% - 160px);
         font-size: .9rem;
       }
     }

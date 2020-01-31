@@ -28,9 +28,9 @@ export default class App extends Component {
         return (
             <div className="movies-app">
                 <Header/>
-                {/*<RandomItem/>*/}
+                <RandomItem/>
                 <MoviesPage/>
-                {/*<SerialsPage/>*/}
+                <SerialsPage/>
             </div>
         );
     }
