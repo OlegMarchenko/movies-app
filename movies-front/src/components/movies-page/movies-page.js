@@ -6,6 +6,11 @@ import Row from "../row";
 import ItemList from "../item-list";
 import ItemDetails, {Record} from "../item-details";
 
+/*----*/
+
+
+/*----*/
+
 import './movies-page.css';
 
 export default class MoviesPage extends Component {
