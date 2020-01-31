@@ -1,3 +1,5 @@
+import React, { Component }  from 'react';
+
 export default class StrapiService {
 
     _apiBase = 'http://localhost:1337';
@@ -32,15 +34,32 @@ export default class StrapiService {
         return this._transformSerial(serial)
     };
 
+
+    preparationData = (items) => {
+        return items.map(({id, name}) => {
+            return (
+                <span key={id}>{name}</span>
+            )
+        })
+    };
+
+    preparationHours = (items) => {
+        return items.map(({id, time_interval, start_free_hours, end_free_hours}) => {
+            return (
+                <span key={id}>{time_interval} ({start_free_hours} - {end_free_hours})</span>
+            )
+        })
+    };
+
     _transformMovie = (movie) => {
         return {
             id: movie.id,
             name: movie.name,
             image: `${this._apiBase}${movie.image.url}`,
             description: movie.description,
-            categories: movie.categories,
-            casts: movie.casts,
-            timeInterval: movie.movie_hours
+            categories: this.preparationData(movie.categories),
+            casts: this.preparationData(movie.casts),
+            timeInterval: this.preparationHours(movie.movie_hours)
         }
     };
 
@@ -52,9 +71,10 @@ export default class StrapiService {
             description: serial.description,
             seasons: serial.seasons,
             tagline: serial.tagline,
-            categories: serial.categories,
-            casts: serial.casts,
-            timeInterval: serial.movie_hours
+            categories: this.preparationData(serial.casts),
+            casts: this.preparationData(serial.casts),
+            timeInterval: this.preparationHours(serial.movie_hours)
         }
     };
+
 }

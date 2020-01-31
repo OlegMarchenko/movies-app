@@ -4,7 +4,7 @@ import StrapiService from "../../services/strapi-service";
 import ErrorBoundry from "../error-boundry";
 import Row from "../row";
 import ItemList from "../item-list";
-import ItemDetails from "../item-details";
+import ItemDetails, {Record} from "../item-details";
 
 import './movies-page.css';
 
@@ -36,7 +36,9 @@ export default class MoviesPage extends Component {
 
         const itemDetails = (
             <ItemDetails itemId={selectedItem}
-                         getData={getMovie}/>
+                         getData={getMovie}>
+                <Record label ="Name" field="name" />
+            </ItemDetails>
         );
 
         return (

@@ -79,26 +79,6 @@ const RandomView = ({randomItem}) => {
 
     const {name, image, categories, timeInterval, casts} = randomItem;
 
-    const renderItems = (items) => {
-        return items.map(({id,name}) => {
-            return (
-                <span key={id}>{name}</span>
-            )
-        });
-    };
-
-    const renderMovieHours = (items) => {
-        return items.map(({id,time_interval, start_free_hours, end_free_hours}) => {
-            return (
-                <span key={id}>{time_interval} ({start_free_hours} - {end_free_hours})</span>
-            )
-        });
-    };
-
-    const categoriesList = renderItems(categories);
-    const castsList = renderItems(casts);
-    const freeTimeList = renderMovieHours(timeInterval);
-
     return (
         <React.Fragment>
             <img src={image} alt={name} title={name} className="item-details-img"/>
@@ -109,15 +89,15 @@ const RandomView = ({randomItem}) => {
                 </li>
                 <li>
                     <span>Categories: </span>
-                    <p>{categoriesList}</p>
+                    <p>{categories}</p>
                 </li>
                 <li>
                     <span>Casts: </span>
-                    <p>{castsList}</p>
+                    <p>{casts}</p>
                 </li>
                 <li>
                     <span>Free Time: </span>
-                    <p>{freeTimeList}</p>
+                    <p>{timeInterval}</p>
                 </li>
             </ul>
         </React.Fragment>
