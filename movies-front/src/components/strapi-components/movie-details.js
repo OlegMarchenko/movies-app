@@ -20,4 +20,4 @@ const mapMethodsToProps = (strapiService) => {
     }
 };
 
-export default withStrapiService(MovieDetails, mapMethodsToProps);
+export default withStrapiService(mapMethodsToProps)(MovieDetails);

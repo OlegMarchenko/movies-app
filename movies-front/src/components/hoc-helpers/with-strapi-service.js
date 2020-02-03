@@ -1,7 +1,7 @@
 import React from "react";
 import {StrapiServiceConsumer} from "../strapi-service-context";
 
-const withStrapiService = (Wrapped, mapMethodsToProps) => {
+const withStrapiService = (mapMethodsToProps) => (Wrapped) => {
 
     return (props) => {
         return (

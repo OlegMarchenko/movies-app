@@ -22,4 +22,4 @@ const mapMethodsToProps = (strapiService) => {
     }
 };
 
-export default withStrapiService(SerialDetails, mapMethodsToProps);
+export default withStrapiService(mapMethodsToProps)(SerialDetails);

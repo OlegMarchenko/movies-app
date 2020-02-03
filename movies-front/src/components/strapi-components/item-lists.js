@@ -2,7 +2,7 @@ import React from "react";
 import ItemList from "../item-list";
 import {withData, withStrapiService} from '../hoc-helpers'
 
-const withChildFunction = (Wrapped, fn) => {
+const withChildFunction = (fn) => (Wrapped) => {
     return (props) => {
         return (
             <Wrapped {...props}>
@@ -13,6 +13,7 @@ const withChildFunction = (Wrapped, fn) => {
 };
 
 const renderName = ({name}) => <span>{name}</span>;
+const renderNameAndSeasons = ({name, seasons}) => <span>{name} ({seasons} seasons)</span>;
 
 const mapMovieMethodsToProps = (strapiService) => {
     return {
@@ -26,11 +27,13 @@ const mapSerialMethodsToProps = (strapiService) => {
     }
 };
 
-const MovieList = withStrapiService(withData(
-    withChildFunction(ItemList, renderName)), mapMovieMethodsToProps);
+const MovieList = withStrapiService(mapMovieMethodsToProps)
+                        (withData(
+                            withChildFunction(renderName)(ItemList)));
 
-const SerialList = withStrapiService(withData(
-    withChildFunction(ItemList, renderName)), mapSerialMethodsToProps);
+const SerialList = withStrapiService(mapSerialMethodsToProps)
+                        (withData(
+                            withChildFunction(renderNameAndSeasons)(ItemList)));
 
 export {
     MovieList,
