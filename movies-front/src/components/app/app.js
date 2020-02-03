@@ -7,9 +7,9 @@ import ErrorBoundry from "../error-boundry";
 import {StrapiServiceProvider} from "../strapi-service-context";
 import StrapiService from "../../services/strapi-service";
 import {MoviePage, SerialPage} from "../pages";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import "./app.css"
-
 
 
 export default class App extends Component {
@@ -34,12 +34,17 @@ export default class App extends Component {
         return (
             <ErrorBoundry>
                 <StrapiServiceProvider value={this.strapiService}>
-                    <div className="movies-app">
-                        <Header/>
-                        <RandomItem/>
-                        <MoviePage/>
-                        <SerialPage/>
-                    </div>
+                    <Router>
+                        <div className="movies-app">
+                            <Header/>
+                            <RandomItem/>
+                            <Switch>
+                                <Route path="/movies/:id?" component={MoviePage} exact/>
+                                <Route path="/serials/:id?" component={SerialPage} exact/>
+                                <Route render={()=> <h2>Page not found</h2>}/>
+                            </Switch>
+                        </div>
+                    </Router>
                 </StrapiServiceProvider>
             </ErrorBoundry>
         );

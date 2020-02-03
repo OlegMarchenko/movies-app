@@ -1,29 +1,16 @@
-import React, {Component} from "react";
+import React from "react";
+import {withRouter} from 'react-router-dom';
 import Row from "../row";
-import {MovieList} from "../strapi-components";
-import MovieDetails from "../strapi-components/movie-details";
-import ErrorBoundry from "../error-boundry";
+import {MovieList, MovieDetails} from "../strapi-components";
 
-export default class MoviePage extends Component {
+const MoviePage = ({ history, match }) => {
+    const {id} = match.params;
+    return (
+        <Row
+            left={<MovieList onItemSelected={(id) => history.push(`${id}`)}/>}
+            right={<MovieDetails itemId={id} />}
+        />
+    )
+};
 
-    state = {
-        selectedItem: null
-    };
-
-    onItemSelected = (selectedItem) => {
-        this.setState({selectedItem})
-    };
-
-    render() {
-        const {selectedItem} = this.state;
-
-        return (
-            <ErrorBoundry>
-                <Row
-                    left={<MovieList onItemSelected={this.onItemSelected}/>}
-                    right={<MovieDetails itemId={selectedItem}/>}
-                />
-            </ErrorBoundry>
-        )
-    }
-}
+export default withRouter(MoviePage);

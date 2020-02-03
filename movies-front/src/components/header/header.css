@@ -1,6 +1,48 @@
 header {
+  display: flex;
+  align-items: center;
   margin-bottom: 30px;
-  text-align: center;
+}
+header ul {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+header ul > li {
+  position: relative;
+}
+header ul > li > a {
+  padding: 0 20px;
+}
+header ul > li > a::after {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: transparent;
+  transition: 0.2s all;
+}
+header ul > li > a:hover::after {
+  background: yellowgreen;
+}
+header ul > li::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: yellowgreen;
+}
+header ul > li:last-child {
+  margin-right: 0;
+}
+header ul > li:last-child::after {
+  content: none;
 }
 
 /*# sourceMappingURL=header.css.map */

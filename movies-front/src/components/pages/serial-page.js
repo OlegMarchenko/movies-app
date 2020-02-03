@@ -1,30 +1,16 @@
-import React, {Component} from "react";
+import React from "react";
+import {withRouter} from 'react-router-dom';
 import Row from "../row";
-import {SerialList} from "../strapi-components";
-import SerialDetails from "../strapi-components/serial-details";
-import ErrorBoundry from "../error-boundry";
+import {SerialList, SerialDetails} from "../strapi-components";
 
+const SerialPage = ({ history, match }) => {
+    const {id} = match.params;
+    return (
+        <Row
+            left={<SerialList onItemSelected={(id) => history.push(`${id}`)}/>}
+            right={<SerialDetails itemId={id} />}
+        />
+    )
+};
 
-export default class SerialPage extends Component {
-
-    state = {
-        selectedItem: null
-    };
-
-    onItemSelected = (selectedItem) => {
-        this.setState({selectedItem})
-    };
-
-    render() {
-        const {selectedItem} = this.state;
-
-        return (
-            <ErrorBoundry>
-                <Row
-                    left={<SerialList onItemSelected={this.onItemSelected}/>}
-                    right={<SerialDetails itemId={selectedItem}/>}
-                />
-            </ErrorBoundry>
-        )
-    }
-}
+export default withRouter(SerialPage);

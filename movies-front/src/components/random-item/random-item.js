@@ -1,13 +1,23 @@
 import React, {Component} from "react";
+import PropTypes from 'prop-types';
 import StrapiService from "../../services/strapi-service";
 import ErrorIndicator from "../error-indicator";
 import Spinner from "../spinner";
+
 
 
 import './random-item.css';
 
 
 export default class RandomItem extends Component {
+
+    static defaultProps = {
+        updateInterval: 10000
+    };
+
+    static propTypes = {
+        updateInterval: PropTypes.number
+    };
 
     strapiService = new StrapiService();
 
@@ -18,8 +28,9 @@ export default class RandomItem extends Component {
     };
 
     componentDidMount() {
+        const {updateInterval} = this.props;
         this.updateRandomItem();
-        this.interval = setInterval(this.updateRandomItem, 10000);
+        this.interval = setInterval(this.updateRandomItem, updateInterval);
     }
 
     componentWillUnmount() {

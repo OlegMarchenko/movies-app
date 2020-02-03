@@ -43,7 +43,7 @@ export default class StrapiService {
         })
     };
 
-    preparationHours = (items) => {
+    preparationTime = (items) => {
         return items.map(({id, time_interval, start_free_hours, end_free_hours}) => {
             return (
                 <span key={id}>{time_interval} ({start_free_hours} - {end_free_hours})</span>
@@ -59,7 +59,7 @@ export default class StrapiService {
             description: movie.description,
             categories: this.preparationData(movie.categories),
             casts: this.preparationData(movie.casts),
-            timeInterval: this.preparationHours(movie.movie_hours)
+            timeInterval: this.preparationTime(movie.movie_hours)
         }
     };
 
@@ -73,7 +73,7 @@ export default class StrapiService {
             tagline: serial.tagline,
             categories: this.preparationData(serial.categories),
             casts: this.preparationData(serial.casts),
-            timeInterval: this.preparationHours(serial.movie_hours)
+            timeInterval: this.preparationTime(serial.movie_hours)
         }
     };
 

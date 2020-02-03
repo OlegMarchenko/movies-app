@@ -31,9 +31,6 @@ a {
   text-decoration: none;
   color: yellowgreen;
 }
-a:hover {
-  text-decoration: underline;
-}
 
 ul {
   padding: 0;

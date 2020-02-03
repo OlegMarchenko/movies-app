@@ -1,4 +1,48 @@
 header {
+  display: flex;
+  align-items: center;
   margin-bottom: 30px;
-  text-align: center;
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    > li {
+      position: relative;
+      > a {
+        padding: 0 20px;
+        &::after {
+          position: absolute;
+          content: '';
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: transparent;
+          transition: .2s all;
+        }
+        &:hover {
+          &::after {
+            background: yellowgreen;
+          }
+        }
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background: yellowgreen;
+      }
+      &:last-child {
+        margin-right: 0;
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
 }
