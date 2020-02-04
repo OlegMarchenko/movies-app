@@ -1,12 +1,11 @@
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 header ul {
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
 }
 header ul > li {
   position: relative;

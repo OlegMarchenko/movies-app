@@ -41,7 +41,6 @@ export default class App extends Component {
                             <Switch>
                                 <Route path="/movies/:id?" component={MoviePage} exact/>
                                 <Route path="/serials/:id?" component={SerialPage} exact/>
-                                <Route render={()=> <h2>Page not found</h2>}/>
                             </Switch>
                         </div>
                     </Router>

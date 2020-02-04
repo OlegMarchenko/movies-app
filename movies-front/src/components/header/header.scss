@@ -1,11 +1,10 @@
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
   ul {
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
     > li {
       position: relative;
       > a {
