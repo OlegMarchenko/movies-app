@@ -17,10 +17,10 @@ const Header = () => {
             </ul>
             <ul>
                 <li>
-                    <Link to="/">Sign Up</Link>
+                    <Link to="/signin">Sign In</Link>
                 </li>
                 <li>
-                    <Link to="/">Sign In</Link>
+                    <Link to="/signup">Sign Up</Link>
                 </li>
             </ul>
         </header>

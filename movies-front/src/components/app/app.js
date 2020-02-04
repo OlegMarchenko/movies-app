@@ -4,10 +4,11 @@ import Header from "../header";
 import RandomItem from "../random-item";
 import ErrorIndicator from "../error-indicator";
 import ErrorBoundry from "../error-boundry";
-import {StrapiServiceProvider} from "../strapi-service-context";
 import StrapiService from "../../services/strapi-service";
+import {StrapiServiceProvider} from "../strapi-service-context";
 import {MoviePage, SerialPage} from "../pages";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
 
 import "./app.css"
 
