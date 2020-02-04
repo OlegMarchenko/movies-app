@@ -135,3 +135,6 @@ movies-front/npm-debug.log*
 movies-front/yarn-debug.log*
 movies-front/yarn-error.log*
 
+# next
+movies-front/.next
+
