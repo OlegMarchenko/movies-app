@@ -1,9 +1,9 @@
 import React from "react";
-import {withRouter} from 'react-router-dom';
 import Row from "../row";
 import {MovieList, MovieDetails} from "../strapi-components";
+import { history } from "../../utils/history";
 
-const MoviePage = ({ history, match }) => {
+const MoviePage = ({ match }) => {
     const {id} = match.params;
     return (
         <Row
@@ -13,4 +13,4 @@ const MoviePage = ({ history, match }) => {
     )
 };
 
-export default withRouter(MoviePage);
+export default MoviePage;

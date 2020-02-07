@@ -1,23 +1,29 @@
-import React, {Component} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import {getToken, clearToken} from "../../utils";
+import {history} from "../../utils/history";
 
 import './header.css';
 
-class Navbar extends Component {
+const Header = () => {
 
-    handleSignout = () => {
+    const handleSignOut = () => {
         clearToken();
-        window.location.reload();
+        history.push('/')
     };
 
-    render() {
-        return getToken() !== null ? <AuthNav handleSignout={this.handleSignout}/> : <UnAuthNav/>
-    }
-}
+    const UnAuthNav = () => (
+        <ul>
+            <li>
+                <Link to="/signin">Sign In</Link>
+            </li>
+            <li>
+                <Link to="/signup">Sign Up</Link>
+            </li>
+        </ul>
+    );
 
-const AuthNav = ({handleSignout}) => {
-    return (
+    const AuthNav = () => (
         <React.Fragment>
             <ul>
                 <li>
@@ -31,36 +37,20 @@ const AuthNav = ({handleSignout}) => {
                 <li>
                     <button
                         className="signout"
-                        onClick={handleSignout}>
+                        onClick={handleSignOut}>
                         Sign Out
                     </button>
                 </li>
             </ul>
         </React.Fragment>
-    )
-};
+    );
 
-const UnAuthNav = () => {
-    return (
-        <ul>
-            <li>
-                <Link to="/signin">Sign In</Link>
-            </li>
-            <li>
-                <Link to="/signup">Sign Up</Link>
-            </li>
-        </ul>
-    )
-};
-
-const Header = () => {
     return (
         <header className="header">
             <h1><Link to="/">Movies App</Link></h1>
-            <Navbar/>
+            {getToken() ? <AuthNav/> : <UnAuthNav/>}
         </header>
     )
 };
-
 
 export default Header;

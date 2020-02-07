@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import Header from "../header";
 import RandomItem from "../random-item";
 import ErrorIndicator from "../error-indicator";
@@ -7,12 +6,12 @@ import ErrorBoundry from "../error-boundry";
 import {StrapiServiceProvider} from "../strapi-service-context";
 import StrapiService from "../../services/strapi-service";
 import {MoviePage, SerialPage, SignupPage, SigninPage} from "../pages";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Router, Route, Switch} from "react-router-dom";
+import {history} from "../../utils/history";
 
 import "./app.css"
 
-
-export default class App extends Component {
+export class App extends Component {
 
     strapiService = new StrapiService();
 
@@ -35,9 +34,9 @@ export default class App extends Component {
         return (
             <ErrorBoundry>
                 <StrapiServiceProvider value={this.strapiService}>
-                    <Router>
+                    <Router history={history}>
                         <div className="movies-app">
-                            <Header/>
+                            <Route component={Header}/>
                             <RandomItem/>
                             <Switch>
                                 <Route path="/movies/:id?" component={MoviePage} exact/>
@@ -52,5 +51,5 @@ export default class App extends Component {
         );
     }
 
-};
+}
 

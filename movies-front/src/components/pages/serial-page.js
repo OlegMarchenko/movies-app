@@ -1,9 +1,9 @@
 import React from "react";
-import {withRouter} from 'react-router-dom';
 import Row from "../row";
 import {SerialList, SerialDetails} from "../strapi-components";
+import { history } from "../../utils/history";
 
-const SerialPage = ({ history, match }) => {
+const SerialPage = ({ match }) => {
     const {id} = match.params;
     return (
         <Row
@@ -13,4 +13,4 @@ const SerialPage = ({ history, match }) => {
     )
 };
 
-export default withRouter(SerialPage);
+export default SerialPage;

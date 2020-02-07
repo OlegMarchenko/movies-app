@@ -1,7 +1,5 @@
 import React from "react";
 
-import './toast-message.css'
-
 const ToastMessage = ({show, message}) => {
 
     if (show) {

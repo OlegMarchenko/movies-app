@@ -4,10 +4,7 @@ import StrapiService from "../../services/strapi-service";
 import ErrorIndicator from "../error-indicator";
 import Spinner from "../spinner";
 
-
-
 import './random-item.css';
-
 
 export default class RandomItem extends Component {
 
@@ -57,6 +54,7 @@ export default class RandomItem extends Component {
             let rand = min + Math.random() * (max + 1 - min);
             return Math.floor(rand);
         }
+
         const id = randomInteger(1, 5);
 
 

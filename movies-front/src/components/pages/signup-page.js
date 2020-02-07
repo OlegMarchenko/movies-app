@@ -3,6 +3,7 @@ import Strapi from "strapi-sdk-javascript/build/main";
 import StrapiService from "../../services/strapi-service";
 import {setToken} from "../../utils";
 import ToastMessage from "../toast-message";
+import { history } from "../../utils/history";
 
 const strapiService = new StrapiService();
 const apiUrl = process.env.API_URL || strapiService._apiBase;
@@ -41,15 +42,12 @@ export default class SignupPage extends Component {
             const response = await strapi.register(username, email, password);
             this.setState({loading: false});
             setToken(response.jwt);
-            this.redirectUser('/')
-            window.location.reload();
+            history.push('/')
         } catch (err) {
             this.setState({loading: false});
             this.showToast(err.message)
         }
     };
-
-    redirectUser = (path) => this.props.history.push(path);
 
     isFormEmpty = ({username, email, password}) => {
         return !username || !email || !password;
