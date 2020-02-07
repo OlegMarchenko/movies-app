@@ -6,7 +6,7 @@ import ErrorIndicator from "../error-indicator";
 import ErrorBoundry from "../error-boundry";
 import {StrapiServiceProvider} from "../strapi-service-context";
 import StrapiService from "../../services/strapi-service";
-import {MoviePage, SerialPage} from "../pages";
+import {MoviePage, SerialPage, SignupPage, SigninPage} from "../pages";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import "./app.css"
@@ -21,11 +21,12 @@ export default class App extends Component {
     };
 
     componentDidCatch() {
-        this.setState({hasError: true})
+        this.setState({
+            hasError: true
+        });
     }
 
     render() {
-
 
         if (this.state.hasError) {
             return <ErrorIndicator/>
@@ -41,6 +42,8 @@ export default class App extends Component {
                             <Switch>
                                 <Route path="/movies/:id?" component={MoviePage} exact/>
                                 <Route path="/serials/:id?" component={SerialPage} exact/>
+                                <Route path="/signup" component={SignupPage}/>
+                                <Route path="/signin" component={SigninPage}/>
                             </Switch>
                         </div>
                     </Router>
