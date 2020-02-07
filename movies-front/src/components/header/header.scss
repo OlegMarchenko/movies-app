@@ -3,12 +3,14 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
   ul {
     display: flex;
     > li {
       position: relative;
       > a {
-        padding: 0 20px;
+        padding: 10px 20px;
         &::after {
           position: absolute;
           content: '';

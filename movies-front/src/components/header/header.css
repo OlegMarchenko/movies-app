@@ -3,6 +3,8 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
 }
 header ul {
   display: flex;
@@ -11,7 +13,7 @@ header ul > li {
   position: relative;
 }
 header ul > li > a {
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 header ul > li > a::after {
   position: absolute;
