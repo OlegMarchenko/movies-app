@@ -21,7 +21,7 @@ function BoundRoute({ route }) {
   return (
     <div className="col-md-12">
       <Header>
-        <FormattedMessage id="users-permissions.BoundRoute.title" />
+        <FormattedMessage id="user-permissions.BoundRoute.title" />
         &nbsp;
         <span>{controller}</span>
         <span>.{action} </span>

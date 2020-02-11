@@ -82,10 +82,10 @@ class Plugin extends React.Component {
             &nbsp;—&nbsp;
             <Description>
               {this.props.name === 'application' ? (
-                <FormattedMessage id="users-permissions.Plugin.permissions.application.description" />
+                <FormattedMessage id="user-permissions.Plugin.permissions.application.description" />
               ) : (
                 <FormattedMessage
-                  id="users-permissions.Plugin.permissions.plugins.description"
+                  id="user-permissions.Plugin.permissions.plugins.description"
                   values={{ name: capitalize(this.props.name) }}
                 />
               )}
@@ -127,7 +127,7 @@ class Plugin extends React.Component {
 Plugin.defaultProps = {
   name: '',
   plugin: {
-    description: 'users-permissions.Plugin.permissions.description.empty',
+    description: 'user-permissions.Plugin.permissions.description.empty',
     controllers: {},
     information: {},
   },

@@ -146,10 +146,10 @@ class PopUpForm extends React.Component {
         <>
           <Input
             inputDescription={{
-              id: 'users-permissions.PopUpForm.Providers.enabled.description',
+              id: 'user-permissions.PopUpForm.Providers.enabled.description',
             }}
             label={{
-              id: 'users-permissions.PopUpForm.Providers.enabled.label',
+              id: 'user-permissions.PopUpForm.Providers.enabled.label',
             }}
             name={`${settingType}.${dataToEdit}.enabled`}
             onChange={this.handleChange}
@@ -222,7 +222,7 @@ class PopUpForm extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FormattedMessage id="users-permissions.PopUpForm.Email.link.documentation" />
+          <FormattedMessage id="user-permissions.PopUpForm.Email.link.documentation" />
         </a>
       ),
     };
@@ -265,7 +265,7 @@ class PopUpForm extends React.Component {
             name={`${settingType}.${dataToEdit}.${value}`}
             inputDescription={{
               id: includes(value, 'object')
-                ? 'users-permissions.PopUpForm.Email.email_templates.inputDescription'
+                ? 'user-permissions.PopUpForm.Email.email_templates.inputDescription'
                 : '',
               params,
             }}

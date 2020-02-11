@@ -70,7 +70,7 @@ const HomePage = ({ global: { plugins }, history: { push } }) => {
     e.preventDefault();
 
     push(
-      '/plugins/content-type-builder/models/user&source=users-permissions?modalType=model&settingType=base&actionType=create'
+      '/plugins/content-type-builder/models/user&source=user-permissions?modalType=model&settingType=base&actionType=create'
     );
   };
   const hasAlreadyCreatedContentTypes =

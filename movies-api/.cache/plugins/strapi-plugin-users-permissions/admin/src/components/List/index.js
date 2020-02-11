@@ -18,12 +18,12 @@ const generateListTitle = (data, settingType) => {
       const title =
         size(data) < 2 ? (
           <FormattedMessage
-            id="users-permissions.List.title.roles.singular"
+            id="user-permissions.List.title.roles.singular"
             values={{ number: size(data) }}
           />
         ) : (
           <FormattedMessage
-            id="users-permissions.List.title.roles.plural"
+            id="user-permissions.List.title.roles.plural"
             values={{ number: size(data) }}
           />
         );
@@ -36,12 +36,12 @@ const generateListTitle = (data, settingType) => {
       const enabledProviders =
         enabledProvidersSize > 1 ? (
           <FormattedMessage
-            id="users-permissions.List.title.providers.enabled.plural"
+            id="user-permissions.List.title.providers.enabled.plural"
             values={{ number: enabledProvidersSize }}
           />
         ) : (
           <FormattedMessage
-            id="users-permissions.List.title.providers.enabled.singular"
+            id="user-permissions.List.title.providers.enabled.singular"
             values={{ number: enabledProvidersSize }}
           />
         );
@@ -49,12 +49,12 @@ const generateListTitle = (data, settingType) => {
       const disabledProviders =
         size(data) - enabledProvidersSize > 1 ? (
           <FormattedMessage
-            id="users-permissions.List.title.providers.disabled.plural"
+            id="user-permissions.List.title.providers.disabled.plural"
             values={{ number: size(data) - enabledProvidersSize }}
           />
         ) : (
           <FormattedMessage
-            id="users-permissions.List.title.providers.disabled.singular"
+            id="user-permissions.List.title.providers.disabled.singular"
             values={{ number: size(data) - enabledProvidersSize }}
           />
         );
@@ -68,12 +68,12 @@ const generateListTitle = (data, settingType) => {
     case 'email-templates': {
       return size(data) > 1 ? (
         <FormattedMessage
-          id="users-permissions.List.title.emailTemplates.plural"
+          id="user-permissions.List.title.emailTemplates.plural"
           values={{ number: size(data) }}
         />
       ) : (
         <FormattedMessage
-          id="users-permissions.List.title.emailTemplates.singular"
+          id="user-permissions.List.title.emailTemplates.singular"
           values={{ number: size(data) }}
         />
       );

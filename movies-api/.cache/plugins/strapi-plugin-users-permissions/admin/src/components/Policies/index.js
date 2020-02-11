@@ -21,7 +21,7 @@ const Policies = ({
   values,
 }) => {
   const { onChange } = useEditPageContext();
-  const baseTitle = 'users-permissions.Policies.header';
+  const baseTitle = 'user-permissions.Policies.header';
   const title = shouldDisplayPoliciesHint ? 'hint' : 'title';
   const value = get(values, inputSelectName);
   const path = without(
@@ -55,7 +55,7 @@ const Policies = ({
           {!shouldDisplayPoliciesHint ? (
             <Input
               customBootstrapClass="col-md-12"
-              label={{ id: 'users-permissions.Policies.InputSelect.label' }}
+              label={{ id: 'user-permissions.Policies.InputSelect.label' }}
               name={inputSelectName}
               onChange={onChange}
               selectOptions={selectOptions}

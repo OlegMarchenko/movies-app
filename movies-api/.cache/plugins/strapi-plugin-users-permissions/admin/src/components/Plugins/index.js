@@ -24,10 +24,10 @@ class Plugins extends React.Component {
         <div className="plugins-wrapper">
           <Header>
             <div>
-              <FormattedMessage id="users-permissions.Plugins.header.title" />
+              <FormattedMessage id="user-permissions.Plugins.header.title" />
             </div>
             <div>
-              <FormattedMessage id="users-permissions.Plugins.header.description" />
+              <FormattedMessage id="user-permissions.Plugins.header.description" />
             </div>
           </Header>
           <PluginsContainer
