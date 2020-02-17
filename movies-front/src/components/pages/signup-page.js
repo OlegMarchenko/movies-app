@@ -86,7 +86,6 @@ export default class SignupPage extends Component {
                         onChange={this.handleChange}/>
                     <ToastMessage show={toast} message={toastMessage}/>
                     <button type="submit">Submit</button>
-
                 </form>
             </section>
         )

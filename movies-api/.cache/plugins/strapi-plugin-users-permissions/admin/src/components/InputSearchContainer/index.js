@@ -107,7 +107,7 @@ function InputSearchContainer({
         <Addon className={`input-group-addon ${isFocused && 'focus'}`}>
           <i className="fas fa-search"></i>
         </Addon>
-        <FormattedMessage id="user-permissions.InputSearch.placeholder">
+        <FormattedMessage id="users-permissions.InputSearch.placeholder">
           {message => (
             <input
               className={`form-control`}

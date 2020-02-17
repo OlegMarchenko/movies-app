@@ -72,7 +72,7 @@ export function getPoliciesSucceeded(policies) {
 
   return {
     type: GET_POLICIES_SUCCEEDED,
-    policies: [{ name: 'user-permissions.Policies.InputSelect.empty', value: '' }].concat(formattedPolicies),
+    policies: [{ name: 'users-permissions.Policies.InputSelect.empty', value: '' }].concat(formattedPolicies),
   };
 }
 

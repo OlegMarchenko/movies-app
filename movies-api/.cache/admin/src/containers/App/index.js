@@ -39,7 +39,7 @@ function App(props) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const requestURL = '/user-permissions/init';
+        const requestURL = '/users-permissions/init';
 
         const { hasAdmin } = await request(requestURL, { method: 'GET' });
         const { data } = await request('/admin/init', { method: 'GET' });

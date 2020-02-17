@@ -174,7 +174,7 @@ export class EditPage extends React.Component {
         didGetUsers={this.props.editPage.didGetUsers}
         getUser={this.props.getUser}
         label={{
-          id: getTrad('EditPage.form.roles.label.user'),
+          id: getTrad('EditPage.form.roles.label.users'),
           params: {
             number: size(get(this.props.editPage, ['modifiedData', 'users'])),
           },

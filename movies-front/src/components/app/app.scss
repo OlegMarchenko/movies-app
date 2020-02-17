@@ -39,6 +39,20 @@ ul {
   list-style: none;
 }
 
+button {
+  font: 22px/1.2 'Helvetica', sans-serif;
+  background: transparent;
+  color: yellowgreen;
+  border: none;
+  cursor: pointer;
+  transition: .2s all;
+  border-bottom: 1px solid transparent;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
 .movies-app {
   max-width: 1200px;
   padding: 50px 30px 200px;
@@ -101,6 +115,21 @@ ul {
 }
 
 .item {
+  &-title {
+    width: 100%;
+    margin: 0 0 15px 15px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 2px;
+      background: yellowgreen;
+      top: 50%;
+      left: -15px;
+      transform: translateY(-50%);
+    }
+  }
   &-holder {
     position: relative;
     display: flex;
@@ -125,6 +154,27 @@ ul {
     &:last-child {
       margin-bottom: 0;
     }
+    &.admin {
+      .item-list {
+        > li {
+          display: flex;
+          justify-content: space-between;
+          cursor: auto;
+          button {
+            opacity: 0;
+            pointer-events: none;
+          }
+          &:hover {
+            button {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+      button {
+      }
+    }
   }
   &-list {
     width: calc(33.3% - 15px);
@@ -139,26 +189,41 @@ ul {
       &:last-child {
         border-bottom: none;
       }
-      &:hover {
-        color: #20ecbe;
-      }
     }
   }
 }
 
-button {
-  font: 22px/1.2 'Helvetica', sans-serif;
-  background: transparent;
-  color: yellowgreen;
-  border: none;
-  cursor: pointer;
-  transition: .2s all;
-  border-bottom: 1px solid transparent;
-  &:focus {
-    outline: none;
+.form {
+  display: flex;
+  width: 100%;
+  i {
+    font-size: 1.5rem;
   }
-  &:hover {
-    border-bottom: 1px solid yellowgreen;
+  &-group {
+    width: 100%;
+    margin-right: 15px;
+    input {
+      height: 40px;
+      padding: 0 10px;
+      width: 100%;
+      border: 1px solid #fff;
+      background: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9rem;
+      transition: .2s all;
+      &::placeholder {
+        color: #fff;
+      }
+      &:focus {
+        outline: none;
+        color: yellowgreen;
+        border-color: yellowgreen;
+        &::placeholder {
+          color: yellowgreen;
+        }
+      }
+    }
   }
 }
 

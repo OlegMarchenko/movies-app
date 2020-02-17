@@ -34,10 +34,10 @@ function EditForm({ onChange, showLoaders, values }) {
           <div className="row">
             <Input
               inputDescription={{
-                id: 'user-permissions.EditForm.inputSelect.description.role',
+                id: 'users-permissions.EditForm.inputSelect.description.role',
               }}
               label={{
-                id: 'user-permissions.EditForm.inputSelect.label.role',
+                id: 'users-permissions.EditForm.inputSelect.label.role',
               }}
               name="advanced.settings.default_role"
               onChange={onChange}
@@ -48,10 +48,10 @@ function EditForm({ onChange, showLoaders, values }) {
             <div className="col-6"></div>
             <Input
               label={{
-                id: 'user-permissions.EditForm.inputToggle.label.email',
+                id: 'users-permissions.EditForm.inputToggle.label.email',
               }}
               inputDescription={{
-                id: 'user-permissions.EditForm.inputToggle.description.email',
+                id: 'users-permissions.EditForm.inputToggle.description.email',
               }}
               name="advanced.settings.unique_email"
               onChange={onChange}
@@ -61,11 +61,11 @@ function EditForm({ onChange, showLoaders, values }) {
             <div className="col-6"></div>
             <Input
               label={{
-                id: 'user-permissions.EditForm.inputToggle.label.sign-up',
+                id: 'users-permissions.EditForm.inputToggle.label.sign-up',
               }}
               inputDescription={{
                 id:
-                  'user-permissions.EditForm.inputToggle.description.sign-up',
+                  'users-permissions.EditForm.inputToggle.description.sign-up',
               }}
               name="advanced.settings.allow_register"
               onChange={onChange}
@@ -76,11 +76,11 @@ function EditForm({ onChange, showLoaders, values }) {
             <Input
               label={{
                 id:
-                  'user-permissions.EditForm.inputToggle.label.email-reset-password',
+                  'users-permissions.EditForm.inputToggle.label.email-reset-password',
               }}
               inputDescription={{
                 id:
-                  'user-permissions.EditForm.inputToggle.description.email-reset-password',
+                  'users-permissions.EditForm.inputToggle.description.email-reset-password',
               }}
               name="advanced.settings.email_reset_password"
               onChange={onChange}
@@ -91,11 +91,11 @@ function EditForm({ onChange, showLoaders, values }) {
             <Input
               label={{
                 id:
-                  'user-permissions.EditForm.inputToggle.label.email-confirmation',
+                  'users-permissions.EditForm.inputToggle.label.email-confirmation',
               }}
               inputDescription={{
                 id:
-                  'user-permissions.EditForm.inputToggle.description.email-confirmation',
+                  'users-permissions.EditForm.inputToggle.description.email-confirmation',
               }}
               name="advanced.settings.email_confirmation"
               onChange={onChange}
@@ -106,11 +106,11 @@ function EditForm({ onChange, showLoaders, values }) {
             <Input
               label={{
                 id:
-                  'user-permissions.EditForm.inputToggle.label.email-confirmation-redirection',
+                  'users-permissions.EditForm.inputToggle.label.email-confirmation-redirection',
               }}
               inputDescription={{
                 id:
-                  'user-permissions.EditForm.inputToggle.description.email-confirmation-redirection',
+                  'users-permissions.EditForm.inputToggle.description.email-confirmation-redirection',
               }}
               name="advanced.settings.email_confirmation_redirection"
               onChange={onChange}
