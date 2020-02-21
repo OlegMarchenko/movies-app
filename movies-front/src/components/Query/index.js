@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
+import Spinner from '../spinner';
 
 const Query = ({ children, query, id }) => {
 
@@ -7,7 +8,7 @@ const Query = ({ children, query, id }) => {
     variables: { id: parseInt(id) }
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner/>;
   if (error) return <p>`Error ${error.message}`</p>;
 
   return children({ data })

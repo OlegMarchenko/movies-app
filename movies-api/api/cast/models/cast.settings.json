@@ -14,13 +14,17 @@
       "required": true
     },
     "movies": {
-      "collection": "movie",
       "via": "casts",
+      "collection": "movie",
       "dominant": true
     },
     "serials": {
       "via": "casts",
       "collection": "serial"
+    },
+    "netflixes": {
+      "via": "casts",
+      "collection": "netflix"
     }
   }
 }

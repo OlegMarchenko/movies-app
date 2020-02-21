@@ -8,6 +8,18 @@ body {
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+}
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
@@ -22,6 +34,10 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font: 1.5rem/1.2 'Helvetica', sans-serif;
+}
+
+form {
+  width: 100%;
 }
 
 p {
@@ -55,15 +71,30 @@ button {
 
 .movies-app {
   max-width: 1200px;
-  padding: 50px 30px 200px;
+  padding: 50px 30px;
   margin: 0 auto;
   position: relative;
+}
+
+.slider {
+  &-holder {
+    position: relative;
+    min-height: 350px;
+    border: 1px solid lighten(#222, 10%);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background: lighten(#222, 3%);
+  }
+  &-item {
+    display: flex;
+    padding: 20px;
+    background: lighten(#222, 3%);
+  }
 }
 
 .item-details {
   display: flex;
   position: relative;
-  height: 342px;
   border: 1px solid lighten(#222, 10%);
   padding: 20px;
   margin-bottom: 30px;
@@ -158,6 +189,7 @@ button {
       .item-list {
         > li {
           display: flex;
+          flex-wrap: wrap;
           justify-content: space-between;
           cursor: auto;
           button {
@@ -172,12 +204,12 @@ button {
           }
         }
       }
-      button {
-      }
     }
   }
   &-list {
     width: calc(33.3% - 15px);
+    max-height: 246px;
+    overflow: auto;
     border: 1px solid lighten(#222, 10%);
     background: lighten(#222, 3%);
     border-radius: 5px;
@@ -194,14 +226,17 @@ button {
 }
 
 .form {
-  display: flex;
-  width: 100%;
-  i {
-    font-size: 1.5rem;
+  display: grid;
+  width: calc(100% - 50px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+  &-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
   }
   &-group {
-    width: 100%;
-    margin-right: 15px;
     input {
       height: 40px;
       padding: 0 10px;
@@ -224,6 +259,9 @@ button {
         }
       }
     }
+  }
+  + button i {
+    font-size: 1.5rem;
   }
 }
 
@@ -277,4 +315,36 @@ button {
     color: tomato;
     margin-top: -12px;
   }
+}
+
+.admin-nav {
+  display: flex;
+  margin-bottom: 30px;
+  > li {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 6px;
+      right: -3px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: greenyellow;
+      border-radius: 50%;
+    }
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+    > a {
+      padding: 0 15px;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  background: yellowgreen;
+  opacity: 1;
 }

@@ -8,7 +8,10 @@ export const CREATE_CATEGORY = gql`
             input: {data: {name: $name}}
         ) {
             category {
+                id
                 name
+                created_at
+                updated_at
             }
         }
     }
@@ -19,11 +22,13 @@ export const GET_CATEGORIES = gql`
         categories {
             id
             name
+            created_at
+            updated_at
         }
     }
 `;
 
-export const UPDATE_CATEGORY = {
+export const UPDATE_CATEGORIES = {
     update(cache, { data: { createCategory } }) {
         const { categories } = cache.readQuery({ query: GET_CATEGORIES });
         cache.writeQuery({

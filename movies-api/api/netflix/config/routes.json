@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/netflixes",
+      "handler": "netflix.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/netflixes/count",
+      "handler": "netflix.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/netflixes/:id",
+      "handler": "netflix.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/netflixes",
+      "handler": "netflix.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/netflixes/:id",
+      "handler": "netflix.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/netflixes/:id",
+      "handler": "netflix.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

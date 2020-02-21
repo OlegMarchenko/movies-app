@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "components_free_hours_free_watch_hours",
   "info": {
     "name": "free_watch_hours",
     "icon": "image"
@@ -7,7 +9,7 @@
   "attributes": {
     "time_interval": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "start_free_hours": {
       "type": "string"
@@ -15,7 +17,5 @@
     "end_free_hours": {
       "type": "string"
     }
-  },
-  "connection": "default",
-  "collectionName": "components_free_hours_free_watch_hours"
+  }
 }

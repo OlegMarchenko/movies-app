@@ -33,6 +33,9 @@ const Header = () => {
           <Link to="/serials/">TV Shows</Link>
         </li>
         <li>
+          <Link to="/netflix/">Netflix</Link>
+        </li>
+        <li>
           <Link to="/admin">Admin</Link>
         </li>
       </ul>

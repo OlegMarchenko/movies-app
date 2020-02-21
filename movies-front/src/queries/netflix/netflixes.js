@@ -1,71 +1,53 @@
 import gql from 'graphql-tag';
 
-export const CREATE_MOVIE = gql`
-    mutation createMovie(
+export const CREATE_NETFLIX = gql`
+    mutation createNetflix(
         $name: String!
         $description: String
         $image: ID
         $categories: [ID]
-        $casts:[ID]
+        $casts: [ID]
+        $price: Float
     ) {
-        createMovie (
+        createNetflix (
             input: {data: {
                 name: $name
                 description: $description
                 image: $image
                 categories: $categories
                 casts: $casts
+                price: $price
             }}
         ) {
-            movie {
+            netflix {
+                id
                 name
                 description
                 image {
-                    name
+                    id
                     url
                 }
                 categories {
+                    id
                     name
                 }
                 casts {
+                    id
                     name
                 }
+                price
             }
         }
     }
 `;
 
-export const GET_MOVIES = gql`
-    query movies {
-        movies {
+export const GET_NETFLIX = gql`
+    query netflixes {
+        netflixes {
             id
-            image {
-                url
-            }
-            name
-            categories {
-                id
-                name
-            }
-            casts {
-                id
-                name
-            }
-            movie_hours {
-                time_interval
-                start_free_hours
-                end_free_hours
-            }
-        }
-    }
-`;
-
-
-export const GET_MOVIE = gql`
-    query movie($id: ID!) {
-        movie(id: $id) {
             name
             image {
+                id
                 url
             }
             categories {
@@ -76,37 +58,40 @@ export const GET_MOVIE = gql`
                 id
                 name
             }
-            movie_hours {
-                id
-                time_interval
-                start_free_hours
-                end_free_hours
-            }
+            price
         }
     }
 `;
 
-export const UPDATE_MOVIES = {
-  update(cache, { data: { createMovie } }) {
-    const { movies } = cache.readQuery({ query: GET_MOVIES });
+export const GET_NETFLIX_MOVIE = gql`
+    query netflix($id: ID!) {
+        netflix(id: $id) {
+            id
+            name
+            image {
+                id
+                url
+            }
+            categories {
+                id
+                name
+            }
+            casts {
+                id
+                name
+            }
+            price
+        }
+    }
+`;
+
+export const UPDATE_NETFLIX = {
+  update(cache, { data: { createNetflix } }) {
+    const { netflixes } = cache.readQuery({ query: GET_NETFLIX });
     cache.writeQuery({
-      query: GET_MOVIES,
-      data: { categories: movies.concat([createMovie]) },
+      query: GET_NETFLIX,
+      data: { categories: netflixes.concat([createNetflix]) },
     });
   },
-  refetchQueries: [{ query: GET_MOVIES }]
+  refetchQueries: [{ query: GET_NETFLIX }]
 };
-
-export const DELETE_MOVIE = gql`
-    mutation deleteMovie(
-        $id: ID!
-    ) {
-        deleteMovie (
-            input: {where: {id: $id}}
-        ) {
-            movie {
-                id
-            }
-        }
-    }
-`;

@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "movies",
+  "collectionName": "Netflixes",
   "info": {
-    "name": "movie"
+    "name": "Netflix"
   },
   "options": {
     "increments": true,
@@ -11,8 +11,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "description": {
       "type": "richtext"
@@ -21,21 +20,20 @@
       "model": "file",
       "via": "related",
       "plugin": "upload",
-      "required": true
+      "required": false
     },
     "categories": {
       "collection": "category",
-      "via": "movies"
-    },
-    "movie_hours": {
-      "type": "component",
-      "repeatable": true,
-      "component": "free-hours.free-watch-hours",
-      "required": false
+      "via": "netflixes",
+      "dominant": true
     },
     "casts": {
       "collection": "cast",
-      "via": "movies"
+      "via": "netflixes",
+      "dominant": true
+    },
+    "price": {
+      "type": "decimal"
     }
   }
 }

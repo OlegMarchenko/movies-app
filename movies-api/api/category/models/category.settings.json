@@ -22,6 +22,10 @@
     "serials": {
       "via": "categories",
       "collection": "serial"
+    },
+    "netflixes": {
+      "via": "categories",
+      "collection": "netflix"
     }
   }
 }
