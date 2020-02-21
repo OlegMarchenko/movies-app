@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { NavLink, Route, Switch } from "react-router-dom";
 import AdminUsers from './admin-users';
 import AdminCategries from './admin-categries';
 import AdminCasts from './admin-casts';
@@ -9,13 +9,13 @@ const AdminPage = () => {
     <>
       <ul className="admin-nav">
         <li>
-          <Link to="/admin/users">Users</Link>
+          <NavLink to="/admin/users" activeClassName="current">Users</NavLink>
         </li>
         <li>
-          <Link to="/admin/categories">Categories</Link>
+          <NavLink to="/admin/categories" activeClassName="current">Categories</NavLink>
         </li>
         <li>
-          <Link to="/admin/casts">Casts</Link>
+          <NavLink to="/admin/casts" activeClassName="current">Casts</NavLink>
         </li>
       </ul>
       <Switch>

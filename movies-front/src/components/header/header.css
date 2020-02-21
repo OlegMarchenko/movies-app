@@ -27,7 +27,7 @@ header ul > li > a::after {
   background: transparent;
   transition: 0.2s all;
 }
-header ul > li > a:hover::after {
+header ul > li > a.current::after {
   background: yellowgreen;
 }
 header ul > li::after {

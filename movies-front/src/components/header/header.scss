@@ -23,7 +23,7 @@ header {
           background: transparent;
           transition: .2s all;
         }
-        &:hover {
+        &.current {
           &::after {
             background: yellowgreen;
           }

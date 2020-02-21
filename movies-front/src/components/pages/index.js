@@ -4,6 +4,7 @@ import SerialPage from './serial-page';
 import SigninPage from './signin-page';
 import SignupPage from './signup-page';
 import NetflixPage from './netflix-page';
+import SinglePage from './single-page';
 
 export {
   AdminPage,
@@ -11,5 +12,6 @@ export {
   SerialPage,
   SigninPage,
   SignupPage,
-  NetflixPage
+  NetflixPage,
+  SinglePage
 }

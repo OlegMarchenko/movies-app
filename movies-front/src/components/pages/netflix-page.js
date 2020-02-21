@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Query from '../Query';
 import { preparationData } from '../../utils/preparationData';
 import { history } from "../../utils/history";
@@ -42,6 +43,14 @@ const NetflixPage = ({ match }) => {
               <span>Price:</span>
               <p>${price}</p>
             </li>
+            <li>
+              <span>Details:</span>
+              <p>
+                <Link to={`single/${id}/`}>
+                  <i className="fas fa-external-link-alt"></i>
+                </Link>
+              </p>
+            </li>
           </ul>
         </div>
       )}
@@ -54,9 +63,11 @@ const NetflixPage = ({ match }) => {
       <Query query={GET_NETFLIX}>
         {({ data: { netflixes } }) => (
           <ul className="item-list">
-            {netflixes.map(({ id, name }) => (
+            {netflixes.map(({ id, name, image }) => (
                 <li key={id}
-                    onClick={() => onItemSelected(id)}>
+                    onClick={() => {
+                      onItemSelected(id);
+                    }}>
                   <span>{name}</span>
                 </li>
               )

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { getToken, clearToken } from "../../utils";
 import { history } from "../../utils/history";
 
@@ -15,10 +15,10 @@ const Header = () => {
   const UnAuthNav = () => (
     <ul>
       <li>
-        <Link to="/signin">Sign In</Link>
+        <NavLink to="/signin" activeClassName="current">Sign In</NavLink>
       </li>
       <li>
-        <Link to="/signup">Sign Up</Link>
+        <NavLink to="/signup" activeClassName="current">Sign Up</NavLink>
       </li>
     </ul>
   );
@@ -27,16 +27,16 @@ const Header = () => {
     <React.Fragment>
       <ul>
         <li>
-          <Link to="/movies/">Movies</Link>
+          <NavLink to="/movies/" activeClassName="current">Movies</NavLink>
         </li>
         <li>
-          <Link to="/serials/">TV Shows</Link>
+          <NavLink to="/serials/" activeClassName="current">TV Shows</NavLink>
         </li>
         <li>
-          <Link to="/netflix/">Netflix</Link>
+          <NavLink to="/netflix/" activeClassName="current">Netflix</NavLink>
         </li>
         <li>
-          <Link to="/admin">Admin</Link>
+          <NavLink to="/admin" activeClassName="current">Admin</NavLink>
         </li>
       </ul>
       <ul>
@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1><Link to="/">Movies App</Link></h1>
+      <h1><NavLink to="/" activeClassName="current">Movies App</NavLink></h1>
       {getToken() ? <AuthNav/> : <UnAuthNav/>}
     </header>
   )

@@ -6,6 +6,7 @@ body {
   background: #222;
   color: #fff;
   margin: 0;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -325,6 +326,9 @@ button:focus {
 }
 .admin-nav > li > a {
   padding: 0 15px;
+}
+.admin-nav > li > a.current {
+  color: aquamarine;
 }
 
 .swiper-pagination-bullet {
