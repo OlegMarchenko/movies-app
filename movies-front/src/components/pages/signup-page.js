@@ -1,93 +1,51 @@
-import React, {Component} from "react";
-import Strapi from "strapi-sdk-javascript/build/main";
-import StrapiService from "../../services/strapi-service";
-import {setToken} from "../../utils";
-import ToastMessage from "../toast-message";
-import { history } from "../../utils/history";
+import React, {useState} from "react";
+import {useMutation} from "@apollo/react-hooks";
+import {REGISTER_USER, UPDATE_USERS} from "../../queries/user/users";
+import {history} from "../../utils/history";
 
-const strapiService = new StrapiService();
-const apiUrl = process.env.API_URL || strapiService._apiBase;
-const strapi = new Strapi(apiUrl);
+const SignupPage = () => {
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [registerUser] = useMutation(REGISTER_USER, UPDATE_USERS);
 
 
-export default class SignupPage extends Component {
-
-    state = {
-        username: '',
-        email: '',
-        password: '',
-        toast: false,
-        toastMessage: '',
-        loading: false
-    };
-
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        registerUser({
+            variables: {
+                username,
+                email,
+                password,
+            }
         });
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        history.push('/');
+
     };
 
-    handleSubmit = async event => {
-        event.preventDefault();
-        const {username, email, password} = this.state;
 
-        // Basic validation
-        if (this.isFormEmpty(this.state)) {
-            this.showToast('Fill in all fields');
-            return;
-        }
-
-        try {
-            this.setState({loading: true});
-            const response = await strapi.register(username, email, password);
-            this.setState({loading: false});
-            setToken(response.jwt);
-            history.push('/')
-        } catch (err) {
-            this.setState({loading: false});
-            this.showToast(err.message)
-        }
-    };
-
-    isFormEmpty = ({username, email, password}) => {
-        return !username || !email || !password;
-    };
-
-    showToast = (toastMessage) => {
-        this.setState({toast: true, toastMessage});
-        setTimeout(() => this.setState({toast: false, toastMessage: ''}), 5000);
-    };
-
-    render() {
-
-        const {toastMessage, toast} = this.state;
-
-        return (
-            <section className="modal signup">
-                <form onSubmit={this.handleSubmit}>
-                    <h3>Sign Up form</h3>
-                    <input
-                        id="username"
-                        type="text"
-                        name="username"
-                        placeholder="Name"
-                        onChange={this.handleChange}/>
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        onChange={this.handleChange}/>
-                    <input
-                        id="password"
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        onChange={this.handleChange}/>
-                    <ToastMessage show={toast} message={toastMessage}/>
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
-        )
-    }
+    return (
+        <section className="modal signup">
+            <form onSubmit={handleSubmit}>
+                <h3>Sign Up form</h3>
+                <input type="text" placeholder="Username" value={username} onChange={(e) => {
+                    setUsername(e.target.value)
+                }}/>
+                <input type="email" placeholder="Email" value={email} onChange={(e) => {
+                    setEmail(e.target.value)
+                }}/>
+                <input type="password" placeholder="Password" value={password} onChange={(e) => {
+                    setPassword(e.target.value)
+                }}/>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    )
 };
+
+export default SignupPage;
