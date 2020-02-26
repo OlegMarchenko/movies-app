@@ -65,23 +65,23 @@ movies-api/*.pid
 # Logs and databases
 ############################
 
-#movies-api/.tmp
-#movies-api/*.log
-#movies-api/*.sql
-#movies-api/*.sqlite
-#movies-api/*.sqlite3
+movies-api/.tmp
+movies-api/*.log
+movies-api/*.sql
+movies-api/*.sqlite
+movies-api/*.sqlite3
 
 
 ############################
 # Misc.
 ############################
 
-#movies-api/*#
-#movies-api/ssl
-#movies-api/.idea
-#movies-api/nbproject
-#movies-api/public/uploads/*
-#movies-api/!public/uploads/.gitkeep
+movies-api/*#
+movies-api/ssl
+movies-api/.idea
+movies-api/nbproject
+movies-api/public/uploads/*
+movies-api/!public/uploads/.gitkeep
 
 ############################
 # Node.js
@@ -107,9 +107,9 @@ movies-api/coverage
 # Strapi
 ############################
 
-#movies-api/exports
-#movies-api/.cache
-#movies-api/build
+movies-api/exports
+movies-api/.cache
+movies-api/build
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
