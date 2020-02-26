@@ -65,11 +65,11 @@ movies-api/*.pid
 # Logs and databases
 ############################
 
-movies-api/.tmp
-movies-api/*.log
-movies-api/*.sql
-movies-api/*.sqlite
-movies-api/*.sqlite3
+#movies-api/.tmp
+#movies-api/*.log
+#movies-api/*.sql
+#movies-api/*.sqlite
+#movies-api/*.sqlite3
 
 
 ############################

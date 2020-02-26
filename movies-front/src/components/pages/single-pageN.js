@@ -3,17 +3,15 @@ import { GET_NETFLIX_MOVIE } from '../../queries/netflix/netflixes';
 import Query from '../Query';
 import { preparationData } from '../../utils/preparationData';
 
-const SinglePage = (props) => {
+const SinglePageN = (props) => {
 
-
-  const imageUrl = props.location.image;
   const id = props.location.id;
+  console.log(props, 'id');
 
+  const movie = useSelector(state => state.movies.list.find(item => item.id === id));
 
   return (
     <div className="single">
-      <Query query={GET_NETFLIX_MOVIE} id={id}>
-        {({ data: { netflix: { id, name, image, categories, casts, price } } }) => (
           <div key={id} className="item-details">
             <img src={`http://localhost:1337/${image.url}`} alt={name} title={name}
                  className="item-details-img"/>
@@ -36,10 +34,8 @@ const SinglePage = (props) => {
               </li>
             </ul>
           </div>
-        )}
-      </Query>
     </div>
   )
 };
 
-export default SinglePage;
+export default SinglePageN;
