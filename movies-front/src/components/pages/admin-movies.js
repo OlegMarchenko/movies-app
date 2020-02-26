@@ -23,7 +23,6 @@ const AdminMovies = () => {
 
   };
 
-
   return (
     <div className="item-holder admin">
       <Query query={GET_MOVIES}>

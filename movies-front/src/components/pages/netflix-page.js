@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Query from '../Query';
 import { preparationData } from '../../utils/preparationData';
+import { history } from "../../utils/history";
 import {
   GET_NETFLIX,
   GET_NETFLIX_MOVIE,
 } from '../../queries/netflix/netflixes';
+
 
 const NetflixPage = ({ match }) => {
 
@@ -14,8 +16,8 @@ const NetflixPage = ({ match }) => {
 
   const onItemSelected = (id) => {
     setMovie(id);
+    history.push(`${id}`)
   };
-
 
   const checkData = movie;
   const withData = (
@@ -57,7 +59,6 @@ const NetflixPage = ({ match }) => {
   const withoutData = <div className="item-details"><span>Select a movie from a list</span></div>;
 
   return (
-
     <div className="item-holder">
       <Query query={GET_NETFLIX}>
         {({ data: { netflixes } }) => (

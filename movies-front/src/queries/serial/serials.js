@@ -30,7 +30,9 @@ export const GET_SERIALS = gql`
 export const GET_SERIAL = gql`
     query serial($id: ID!) {
         serial(id: $id) {
+            id
             name
+            seasons
             image {
                 url
             }
@@ -42,6 +44,7 @@ export const GET_SERIAL = gql`
                 id
                 name
             }
+            tagline
             movie_hours {
                 id
                 time_interval

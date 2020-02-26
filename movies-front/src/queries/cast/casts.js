@@ -44,7 +44,7 @@ export const DELETE_CAST = gql`
         $id: ID!
     ) {
         deleteCast (
-          input: {where: {id: $id}}
+            input: {where: {id: $id}}
         ) {
             cast {
                 id

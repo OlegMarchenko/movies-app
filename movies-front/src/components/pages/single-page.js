@@ -5,7 +5,6 @@ import { preparationData } from '../../utils/preparationData';
 
 const SinglePage = (props) => {
 
-
   const imageUrl = props.location.image;
   const id = props.location.id;
 

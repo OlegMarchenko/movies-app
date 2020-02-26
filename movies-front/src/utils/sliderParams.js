@@ -1,5 +1,3 @@
-
-
 export const sliderParams = {
   effect: 'coverflow',
   autoplay: {

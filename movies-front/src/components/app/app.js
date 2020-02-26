@@ -2,7 +2,15 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../header";
 import RandomItem from '../random-item/random-item';
-import { AdminPage, MoviePage, SerialPage, SignupPage, SigninPage, NetflixPage, SinglePage } from '../pages'
+import {
+  AdminPage,
+  MoviePage,
+  SerialPage,
+  SignupPage,
+  SigninPage,
+  NetflixPage,
+  SinglePage
+} from '../pages'
 
 
 import "./app.css"

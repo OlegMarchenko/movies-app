@@ -29,14 +29,14 @@ export const GET_CATEGORIES = gql`
 `;
 
 export const UPDATE_CATEGORIES = {
-    update(cache, { data: { createCategory } }) {
-        const { categories } = cache.readQuery({ query: GET_CATEGORIES });
-        cache.writeQuery({
-            query: GET_CATEGORIES,
-            data: { categories: categories.concat([createCategory]) },
-        });
-    },
-    refetchQueries: [{ query: GET_CATEGORIES }]
+  update(cache, { data: { createCategory } }) {
+    const { categories } = cache.readQuery({ query: GET_CATEGORIES });
+    cache.writeQuery({
+      query: GET_CATEGORIES,
+      data: { categories: categories.concat([createCategory]) },
+    });
+  },
+  refetchQueries: [{ query: GET_CATEGORIES }]
 };
 
 

@@ -64,6 +64,7 @@ export const GET_MOVIES = gql`
 export const GET_MOVIE = gql`
     query movie($id: ID!) {
         movie(id: $id) {
+            id
             name
             image {
                 url

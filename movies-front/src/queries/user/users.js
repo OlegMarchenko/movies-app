@@ -32,14 +32,14 @@ export const GET_USERS = gql`
 
 
 export const UPDATE_USERS = {
-    update(cache, {data: {register}}) {
-        const {users} = cache.readQuery({query: GET_USERS});
-        cache.writeQuery({
-            query: GET_USERS,
-            data: {categories: users.concat([register])},
-        });
-    },
-    refetchQueries: [{query: GET_USERS}]
+  update(cache, { data: { register } }) {
+    const { users } = cache.readQuery({ query: GET_USERS });
+    cache.writeQuery({
+      query: GET_USERS,
+      data: { categories: users.concat([register]) },
+    });
+  },
+  refetchQueries: [{ query: GET_USERS }]
 };
 
 export const DELETE_USER = gql`
