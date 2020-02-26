@@ -1,0 +1,573 @@
+type Cast {
+  name: String!
+  movies(sort: String, limit: Int, start: Int, where: JSON): [Movie]
+  serials(sort: String, limit: Int, start: Int, where: JSON): [Serial]
+  netflixes(sort: String, limit: Int, start: Int, where: JSON): [Netflix]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input CastInput {
+  name: String!
+  movies: [ID]
+  serials: [ID]
+  netflixes: [ID]
+}
+
+type Category {
+  name: String!
+  movies(sort: String, limit: Int, start: Int, where: JSON): [Movie]
+  serials(sort: String, limit: Int, start: Int, where: JSON): [Serial]
+  netflixes(sort: String, limit: Int, start: Int, where: JSON): [Netflix]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input CategoryInput {
+  name: String!
+  movies: [ID]
+  serials: [ID]
+  netflixes: [ID]
+}
+
+input ComponentFreeHoursFreeWatchHourInput {
+  time_interval: String
+  start_free_hours: String
+  end_free_hours: String
+}
+
+type ComponentFreeHoursFreeWatchHours {
+  time_interval: String
+  start_free_hours: String
+  end_free_hours: String
+  id: ID!
+}
+
+input createCastInput {
+  data: CastInput
+}
+
+type createCastPayload {
+  cast: Cast
+}
+
+input createCategoryInput {
+  data: CategoryInput
+}
+
+type createCategoryPayload {
+  category: Category
+}
+
+input createMovieInput {
+  data: MovieInput
+}
+
+type createMoviePayload {
+  movie: Movie
+}
+
+input createNetflixInput {
+  data: NetflixInput
+}
+
+type createNetflixPayload {
+  netflix: Netflix
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createSerialInput {
+  data: SerialInput
+}
+
+type createSerialPayload {
+  serial: Serial
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the
+`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO
+8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+input deleteCastInput {
+  where: InputID
+}
+
+type deleteCastPayload {
+  cast: Cast
+}
+
+input deleteCategoryInput {
+  where: InputID
+}
+
+type deleteCategoryPayload {
+  category: Category
+}
+
+input deleteMovieInput {
+  where: InputID
+}
+
+type deleteMoviePayload {
+  movie: Movie
+}
+
+input deleteNetflixInput {
+  where: InputID
+}
+
+type deleteNetflixPayload {
+  netflix: Netflix
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteSerialInput {
+  where: InputID
+}
+
+type deleteSerialPayload {
+  serial: Serial
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input editCastInput {
+  name: String
+  movies: [ID]
+  serials: [ID]
+  netflixes: [ID]
+}
+
+input editCategoryInput {
+  name: String
+  movies: [ID]
+  serials: [ID]
+  netflixes: [ID]
+}
+
+input editComponentFreeHoursFreeWatchHourInput {
+  id: ID
+  time_interval: String
+  start_free_hours: String
+  end_free_hours: String
+}
+
+input editFileInput {
+  name: String
+  hash: String
+  sha256: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+}
+
+input editMovieInput {
+  name: String
+  description: String
+  image: ID
+  categories: [ID]
+  movie_hours: [editComponentFreeHoursFreeWatchHourInput]
+  casts: [ID]
+}
+
+input editNetflixInput {
+  name: String
+  description: String
+  image: ID
+  categories: [ID]
+  casts: [ID]
+  price: Float
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input editSerialInput {
+  name: String
+  description: String
+  image: ID
+  categories: [ID]
+  casts: [ID]
+  seasons: String
+  movie_hours: [editComponentFreeHoursFreeWatchHourInput]
+  tagline: String
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input FileInput {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | Cast | createCastPayload | updateCastPayload | deleteCastPayload | Category | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Movie | createMoviePayload | updateMoviePayload | deleteMoviePayload | Netflix | createNetflixPayload | updateNetflixPayload | deleteNetflixPayload | Serial | createSerialPayload | updateSerialPayload | deleteSerialPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+
+type Movie {
+  name: String!
+  description: String
+  image: UploadFile
+  movie_hours: [ComponentFreeHoursFreeWatchHours]
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  casts(sort: String, limit: Int, start: Int, where: JSON): [Cast]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input MovieInput {
+  name: String!
+  description: String
+  image: ID
+  categories: [ID]
+  movie_hours: [ComponentFreeHoursFreeWatchHourInput]
+  casts: [ID]
+}
+
+type Mutation {
+  createCast(input: createCastInput): createCastPayload
+  updateCast(input: updateCastInput): updateCastPayload
+  deleteCast(input: deleteCastInput): deleteCastPayload
+  createCategory(input: createCategoryInput): createCategoryPayload
+  updateCategory(input: updateCategoryInput): updateCategoryPayload
+  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
+  createMovie(input: createMovieInput): createMoviePayload
+  updateMovie(input: updateMovieInput): updateMoviePayload
+  deleteMovie(input: deleteMovieInput): deleteMoviePayload
+  createNetflix(input: createNetflixInput): createNetflixPayload
+  updateNetflix(input: updateNetflixInput): updateNetflixPayload
+  deleteNetflix(input: deleteNetflixInput): deleteNetflixPayload
+  createSerial(input: createSerialInput): createSerialPayload
+  updateSerial(input: updateSerialInput): updateSerialPayload
+  deleteSerial(input: deleteSerialInput): deleteSerialPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UserInput!): UsersPermissionsLoginPayload!
+}
+
+type Netflix {
+  name: String!
+  description: String
+  image: UploadFile
+  price: Float
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  casts(sort: String, limit: Int, start: Int, where: JSON): [Cast]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input NetflixInput {
+  name: String!
+  description: String
+  image: ID
+  categories: [ID]
+  casts: [ID]
+  price: Float
+}
+
+type Query {
+  cast(id: ID!): Cast
+  casts(sort: String, limit: Int, start: Int, where: JSON): [Cast]
+  category(id: ID!): Category
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  movie(id: ID!): Movie
+  movies(sort: String, limit: Int, start: Int, where: JSON): [Movie]
+  netflix(id: ID!): Netflix
+  netflixes(sort: String, limit: Int, start: Int, where: JSON): [Netflix]
+  serial(id: ID!): Serial
+  serials(sort: String, limit: Int, start: Int, where: JSON): [Serial]
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+type Serial {
+  name: String!
+  description: String
+  image: UploadFile
+  seasons: String
+  movie_hours: [ComponentFreeHoursFreeWatchHours]
+  tagline: String!
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  casts(sort: String, limit: Int, start: Int, where: JSON): [Cast]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input SerialInput {
+  name: String!
+  description: String
+  image: ID
+  categories: [ID]
+  casts: [ID]
+  seasons: String
+  movie_hours: [ComponentFreeHoursFreeWatchHourInput!]
+  tagline: String!
+}
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+input updateCastInput {
+  where: InputID
+  data: editCastInput
+}
+
+type updateCastPayload {
+  cast: Cast
+}
+
+input updateCategoryInput {
+  where: InputID
+  data: editCategoryInput
+}
+
+type updateCategoryPayload {
+  category: Category
+}
+
+input updateMovieInput {
+  where: InputID
+  data: editMovieInput
+}
+
+type updateMoviePayload {
+  movie: Movie
+}
+
+input updateNetflixInput {
+  where: InputID
+  data: editNetflixInput
+}
+
+type updateNetflixPayload {
+  netflix: Netflix
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateSerialInput {
+  where: InputID
+  data: editSerialInput
+}
+
+type updateSerialPayload {
+  serial: Serial
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String!
+  user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+  id: ID!
+}
+
+type UsersPermissionsRole {
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  id: ID!
+}
+
+type UsersPermissionsUser {
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+}

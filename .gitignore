@@ -76,12 +76,12 @@ movies-api/*.pid
 # Misc.
 ############################
 
-movies-api/*#
-movies-api/ssl
-movies-api/.idea
-movies-api/nbproject
-movies-api/public/uploads/*
-movies-api/!public/uploads/.gitkeep
+#movies-api/*#
+#movies-api/ssl
+#movies-api/.idea
+#movies-api/nbproject
+#movies-api/public/uploads/*
+#movies-api/!public/uploads/.gitkeep
 
 ############################
 # Node.js
@@ -107,9 +107,9 @@ movies-api/coverage
 # Strapi
 ############################
 
-movies-api/exports
-movies-api/.cache
-movies-api/build
+#movies-api/exports
+#movies-api/.cache
+#movies-api/build
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
