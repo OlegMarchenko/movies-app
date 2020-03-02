@@ -72,6 +72,11 @@ export const GET_NETFLIX_MOVIE = gql`
                 id
                 url
             }
+            imageMini {
+                id
+                url
+            }
+            description
             categories {
                 id
                 name
@@ -81,6 +86,10 @@ export const GET_NETFLIX_MOVIE = gql`
                 name
             }
             price
+            release
+            time
+            budget
+            Average
         }
     }
 `;

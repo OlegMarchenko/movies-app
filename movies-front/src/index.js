@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
-import client from './utils/apolloClient';
 import { Router } from 'react-router-dom';
 import { history } from './utils/history';
+import client from './utils/apolloClient';
 import App from './components/app/app';
 
 
-ReactDOM.render(
+render(
   <Router history={history}>
     <ApolloProvider client={client}>
       <App/>

@@ -221,6 +221,11 @@ input editNetflixInput {
   categories: [ID]
   casts: [ID]
   price: Float
+  release: Date
+  Average: String
+  time: String
+  budget: String
+  imageMini: ID
 }
 
 input editRoleInput {
@@ -346,6 +351,11 @@ type Netflix {
   description: String
   image: UploadFile
   price: Float
+  release: Date
+  Average: String
+  time: String
+  budget: String
+  imageMini: UploadFile
   categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
   casts(sort: String, limit: Int, start: Int, where: JSON): [Cast]
   id: ID!
@@ -360,6 +370,11 @@ input NetflixInput {
   categories: [ID]
   casts: [ID]
   price: Float
+  release: Date
+  Average: String
+  time: String
+  budget: String
+  imageMini: ID
 }
 
 type Query {

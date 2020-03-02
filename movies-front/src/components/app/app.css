@@ -4,8 +4,14 @@ html {
 
 body {
   background: #222;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   margin: 0;
+  min-height: 100vh;
+}
+
+.movies-app {
   min-height: 100vh;
 }
 

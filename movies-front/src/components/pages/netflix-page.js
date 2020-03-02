@@ -7,12 +7,13 @@ import {
   GET_NETFLIX,
   GET_NETFLIX_MOVIE,
 } from '../../queries/netflix/netflixes';
-
+import { useApolloClient } from '@apollo/react-hooks';
 
 const NetflixPage = ({ match }) => {
 
   const { id } = match.params;
   const [movie, setMovie] = useState(id);
+  const client = useApolloClient();
 
   const onItemSelected = (id) => {
     setMovie(id);
@@ -20,11 +21,13 @@ const NetflixPage = ({ match }) => {
   };
 
   const checkData = movie;
+  const withoutData = <div className="item-details"><span>Select a movie from a list</span></div>;
+
   const withData = (
     <Query query={GET_NETFLIX_MOVIE} id={movie}>
-      {({ data: { netflix: { id, name, image, categories, casts, price } } }) => (
+      {({ data: { netflix: { id, name, imageMini, categories, casts, price } } }) => (
         <div key={id} className="item-details">
-          <img src={`http://localhost:1337/${image.url}`} alt={name} title={name}
+          <img src={`http://localhost:1337/${imageMini.url}`} alt={name} title={name}
                className="item-details-img"/>
           <ul className="item-details-desc">
             <li>
@@ -46,7 +49,8 @@ const NetflixPage = ({ match }) => {
             <li>
               <span>Details:</span>
               <p>
-                <Link to={{ pathname: `single/${id}/`, image: image, id: id }}>
+                <Link
+                  to={`single/${movie}/`}>
                   <i className="fas fa-external-link-alt"></i>
                 </Link>
               </p>
@@ -56,7 +60,6 @@ const NetflixPage = ({ match }) => {
       )}
     </Query>
   );
-  const withoutData = <div className="item-details"><span>Select a movie from a list</span></div>;
 
   return (
     <div className="item-holder">
@@ -66,6 +69,7 @@ const NetflixPage = ({ match }) => {
             {netflixes.map(({ id, name }) => (
                 <li key={id}
                     onClick={() => {
+                      client.writeData({ data: { id } });
                       onItemSelected(id);
                     }}>
                   <span>{name}</span>

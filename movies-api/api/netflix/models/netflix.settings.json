@@ -34,6 +34,24 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "release": {
+      "type": "date"
+    },
+    "Average": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "string"
+    },
+    "imageMini": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }
