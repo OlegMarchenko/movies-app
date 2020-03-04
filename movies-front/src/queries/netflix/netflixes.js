@@ -89,7 +89,7 @@ export const GET_NETFLIX_MOVIE = gql`
             release
             time
             budget
-            Average
+            average
         }
     }
 `;

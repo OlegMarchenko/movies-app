@@ -5,7 +5,7 @@ import Spinner from '../spinner';
 const Query = ({ children, query, id }) => {
 
   const { data, loading, error } = useQuery(query, {
-    variables: { id: parseInt(id) }
+    variables: { id: id }
   });
 
   if (loading) return <Spinner/>;

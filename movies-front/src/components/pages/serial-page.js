@@ -20,7 +20,7 @@ const MoviePage = ({ match }) => {
     <Query query={GET_SERIAL} id={movie}>
       {({ data: { serial: { id, name, image, seasons, categories, casts, tagline, movie_hours } } }) => (
         <div key={id} className="item-details">
-          <img src={`http://localhost:1337/${image.url}`} alt={name} title={name}
+          <img src={`https://nlt-movies.herokuapp.com/${image.url}`} alt={name} title={name}
                className="item-details-img"/>
           <ul className="item-details-desc">
             <li>

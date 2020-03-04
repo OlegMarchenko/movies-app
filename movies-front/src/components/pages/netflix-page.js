@@ -27,7 +27,7 @@ const NetflixPage = ({ match }) => {
     <Query query={GET_NETFLIX_MOVIE} id={movie}>
       {({ data: { netflix: { id, name, imageMini, categories, casts, price } } }) => (
         <div key={id} className="item-details">
-          <img src={`http://localhost:1337/${imageMini.url}`} alt={name} title={name}
+          <img src={`https://nlt-movies.herokuapp.com/${imageMini.url}`} alt={name} title={name}
                className="item-details-img"/>
           <ul className="item-details-desc">
             <li>

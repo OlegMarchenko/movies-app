@@ -22,7 +22,7 @@ const RandomItem = () => {
             <Swiper {...sliderParams}>
               {movies.map(({ id, name, image, categories, casts, movie_hours }) => (
                   <div key={id} className="slider-item">
-                    <img src={`http://localhost:1337/${image.url}`} alt={name} title={name}
+                    <img src={`https://nlt-movies.herokuapp.com/${image.url}`} alt={name} title={name}
                          className="item-details-img"/>
                     <ul className="item-details-desc">
                       <li>

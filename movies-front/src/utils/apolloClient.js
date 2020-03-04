@@ -5,7 +5,7 @@ import { HttpLink } from 'apollo-link-http';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: new HttpLink({ uri: 'http://localhost:1337/graphql' })
+  link: new HttpLink({ uri: 'https://nlt-movies.herokuapp.com/graphql' })
 });
 
 export default client;

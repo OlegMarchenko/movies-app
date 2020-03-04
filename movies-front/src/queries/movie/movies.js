@@ -74,7 +74,6 @@ export const GET_MOVIE = gql`
                 name
             }
             casts {
-                id
                 name
             }
             movie_hours {

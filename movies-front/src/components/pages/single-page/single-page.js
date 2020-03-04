@@ -15,7 +15,7 @@ const SinglePage = (movie) => {
   const idx = client.cache.data.data.ROOT_QUERY.id;
 
   const { data, loading, error } = useQuery(GET_NETFLIX_MOVIE, {
-    variables: { id: parseInt(idx) }
+    variables: { id: id }
   });
 
   const [imageUrl, setImageUrl] = useState(null);
@@ -31,19 +31,19 @@ const SinglePage = (movie) => {
     }
   });
 
-  document.body.style.backgroundImage = `url(http://localhost:1337${imageUrl})`;
+  document.body.style.backgroundImage = `url(https://nlt-movies.herokuapp.com/${imageUrl})`;
 
 
   if (loading) return <Spinner/>;
   if (error) return <p>`Error ${error.message}`</p>;
 
-  const { name, image, imageMini, description, release, time, budget, Average } = data.netflix;
+  const { name, image, imageMini, description, release, time, budget, average } = data.netflix;
 
 
   return (
     <div className="single">
       <div className="item-details">
-        <img src={`http://localhost:1337/${imageMini.url}`} alt={name}
+        <img src={`https://nlt-movies.herokuapp.com/${imageMini.url}`} alt={name}
              title={name}
              className="item-details-img"/>
         <ul className="item-details-desc">
@@ -63,7 +63,7 @@ const SinglePage = (movie) => {
           </li>
           <li>
             <span>Vote Average</span>
-            <p>{Average}</p>
+            <p>{average}</p>
           </li>
         </ul>
       </div>
