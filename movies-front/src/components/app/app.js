@@ -15,6 +15,11 @@ import {
 
 import "./app.css"
 
+
+function PrivateRoute() {
+
+}
+
 const App = () => {
   return (
     <div className="movies-app">

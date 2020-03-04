@@ -12,6 +12,7 @@ const SigninPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await strapi.login(username, password);
       setToken(response.jwt);
@@ -25,7 +26,7 @@ const SigninPage = () => {
   return (
     <section className="modal signin">
       <form onSubmit={handleSubmit}>
-        <h3>Sign In form</h3>
+        <h3>Sign In</h3>
         <input type="text" placeholder="Username" value={username} onChange={(e) => {
           setUsername(e.target.value)
         }}/>

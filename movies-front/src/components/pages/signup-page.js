@@ -32,7 +32,7 @@ const SignupPage = () => {
   return (
     <section className="modal signup">
       <form onSubmit={handleSubmit}>
-        <h3>Sign Up form</h3>
+        <h3>Sign Up</h3>
         <input type="text" placeholder="Username" value={username} onChange={(e) => {
           setUsername(e.target.value)
         }}/>

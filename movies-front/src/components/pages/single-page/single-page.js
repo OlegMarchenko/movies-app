@@ -14,9 +14,6 @@ const SinglePage = (movie) => {
   client.writeData({ data: { id } });
   const idx = client.cache.data.data.ROOT_QUERY.id;
 
-  console.log(client);
-
-
   const { data, loading, error } = useQuery(GET_NETFLIX_MOVIE, {
     variables: { id: parseInt(idx) }
   });
@@ -26,7 +23,7 @@ const SinglePage = (movie) => {
   useEffect(() => {
     if (data) {
       setImageUrl(image.url);
-      document.querySelector('#root').style.backgroundImage = 'linear-gradient(rgba(0,0,0,.6) 15%,rgba(0,0,0,.2) 40%,#000 90%)';
+      document.querySelector('#root').style.backgroundImage = 'linear-gradient(rgba(0,0,0,.7) 15%,rgba(0,0,0,.2) 40%, rgba(0,0,0,.6) 90%)';
       return () => {
         document.body.style.backgroundImage = '';
         document.querySelector('#root').style.backgroundImage = '';
